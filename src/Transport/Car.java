@@ -4,16 +4,16 @@ public class Car extends Transport {
         private final String remoutLounch;
         private final String keyLess;
 
-        public Key (String remoutLounch, String keyLess){
-            if (remoutLounch != " " && remoutLounch != null) {
-                this.remoutLounch = remoutLounch;
-            } else {
+        private Key (String remoutLounch, String keyLess){
+            if (remoutLounch.isEmpty() || remoutLounch.equals(null)) {
                 this.remoutLounch = "Default";
-            }
-            if (keyLess != " " && keyLess != null) {
-                this.keyLess = keyLess;
             } else {
+                this.remoutLounch = remoutLounch;
+            }
+            if (keyLess.isEmpty() || keyLess.equals(null)) {
                 this.keyLess = "Default";
+            } else {
+                this.keyLess = keyLess;
             }
         }
     }
@@ -46,22 +46,24 @@ public class Car extends Transport {
     public final int getNumberPlace() {
         return PLACE_COUNT;
     }
-    public Car(String colour, int speed, float engineVolume, String transmission, int registerNumber, boolean typeTire) {
+    public Car(String BRAND, String MODEL, String colour, int speed, float engineVolume, String transmission, int registerNumber, boolean typeTire) {
         super(colour, speed);
-        if (transmission != " " && transmission != null) {
-            this.transmission = transmission;
-        } else {
+        if (transmission.isEmpty() || transmission.equals(null)) {
             this.transmission = "Default";
+        } else {
+            this.transmission = transmission;
         }
+        this.MODEL=MODEL;
+        this.BRAND=BRAND;
         if (registerNumber>0) {
             this.registerNumber = registerNumber;
         } else {
             this.registerNumber = 1;
         }
-        if (colour != " " && colour != null) {
-            this.colour = colour;
-        } else {
+        if (colour.isEmpty() || colour.equals(null)) {
             this.colour = "White";
+        } else {
+            this.colour = colour;
         }
         if (engineVolume > 0) {
             this.engineVolume = engineVolume;
@@ -86,21 +88,22 @@ public class Car extends Transport {
             }
         }
     }
+   @Override
+    public String toString() {
+        return
+                "Марка машины " + BRAND + "\n"
+                        + "Модель " + MODEL + "\n"
+                        + "Страна производитель " + PROD_COUNTRY + "\n"
+                        + "Год выпуска " + PROD_YEAR + "\n"
+                        + "Цвет " + colour + "\n"
+                        + "Объем двигетеля " + engineVolume + "\n"
+                        + "Коробка передач " + transmission + "\n"
+                        + "Тип кузова " + TYPE_BODY + "\n"
+                        + "Регистрационный номер " + registerNumber + "\n"
+                        + "Количество мест " + PLACE_COUNT + "\n"
+                        + "Коробка передач " + transmission + "\n"
+                        + "Скорость " + speed + "\n";
 
-    public void info () {
-        System.out.println("Марка машины " + BRAND);
-        System.out.println("Модель " + MODEL);
-        System.out.println("Страна производитель " + PROD_COUNTRY);
-        System.out.println("Год выпуска " + PROD_YEAR);
-        System.out.println("Цвет " + colour);
-        System.out.println("Объем двигетеля " + engineVolume);
-        System.out.println("Коробка передач " + transmission);
-        System.out.println("Тип кузова " + TYPE_BODY);
-        System.out.println("Регистрационный номер " + registerNumber);
-        System.out.println("Количество мест " + PLACE_COUNT);
-        System.out.println("Коробка передач " + transmission);
-        System.out.println("Скорость "+ speed);
-        System.out.println();
     }
 }
 
