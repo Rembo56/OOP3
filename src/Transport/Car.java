@@ -78,7 +78,7 @@ public class Car extends Transport {
         if (engineVolume > 0) {
             this.engineVolume = engineVolume;
         } else {
-            this.engineVolume = 1.5F;
+            this.engineVolume = 1.6F;
         }
     }
 

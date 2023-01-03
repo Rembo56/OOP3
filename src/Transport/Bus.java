@@ -7,7 +7,7 @@ public class Bus extends Transport {
     @Override
     public String toString() {
         return  "Марка машины " + brand + "\n"
-                + "Модель " + model + "\n"
+                + "Модел " + model + "\n"
                 + "Страна производитель " + prodCountry + "\n"
                 + "Год выпуска " + prodYear + "\n"
                 + "Цвет " + colour + "\n"

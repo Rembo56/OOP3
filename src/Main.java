@@ -5,7 +5,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-       Bus bus1 = new Bus("Volvo","XC60","Russia",2023,850,"White");
+       Bus bus1 = new Bus("Volvo","XC60","Russia",2021,850,"White");
         System.out.println(bus1.toString());
 
 

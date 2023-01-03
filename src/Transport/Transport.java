@@ -16,7 +16,7 @@ public class Transport {
         this.colour = colour;
 
         if (colour==null || colour.isEmpty()) {
-            this.colour = "White";
+            this.colour = "black";
         } else {
             this.colour = colour;
         }
