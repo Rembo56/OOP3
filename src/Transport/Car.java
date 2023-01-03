@@ -20,50 +20,60 @@ public class Car extends Transport {
 
     public float engineVolume;
     public String transmission;
-    public static final String TYPE_BODY="Sedan";
+    public String typeBody;
     public int registerNumber;
-    public static final int PLACE_COUNT=5;
+    public int placeCount;
     public boolean typeTire;
     public int mounth;
 
     public String getBrand() {
-        return BRAND;
+        return brand;
     }
+
     public String getModel() {
-        return MODEL;
+        return model;
     }
+
     public String getProductionCountry() {
-        return PROD_COUNTRY;
+        return prodCountry;
     }
+
     public int getProductionYear() {
-        return PROD_YEAR;
+        return prodYear;
     }
+
     public void printTires() {
         System.out.println(typeTire);}
+
     public String getTypeBodyCar() {
-        return TYPE_BODY;
+        return typeBody;
     }
+
     public final int getNumberPlace() {
-        return PLACE_COUNT;
+        return placeCount;
     }
-    public Car(String BRAND, String MODEL, String colour, int speed, float engineVolume, String transmission, int registerNumber, boolean typeTire) {
-        super(colour, speed);
-        if (transmission.isEmpty() || transmission.equals(null)) {
+
+    public Car(String brand, String model, String prodCountry, int prodYear, int speed, String colour, float engineVolume, String transmission, String typeBody, int registerNumber, int placeCount, boolean typeTire, int mounth) {
+        super(brand, model, prodCountry, prodYear, speed, colour);
+        this.engineVolume = engineVolume;
+        this.transmission = transmission;
+        this.typeBody = typeBody;
+        this.registerNumber = registerNumber;
+        this.placeCount = placeCount;
+        this.typeTire = typeTire;
+        this.mounth = mounth;
+
+        if (transmission==null || transmission.isEmpty()) {
             this.transmission = "Default";
         } else {
             this.transmission = transmission;
         }
-        this.MODEL=MODEL;
-        this.BRAND=BRAND;
+        this.model=model;
+        this.brand=brand;
         if (registerNumber>0) {
             this.registerNumber = registerNumber;
         } else {
             this.registerNumber = 1;
-        }
-        if (colour.isEmpty() || colour.equals(null)) {
-            this.colour = "White";
-        } else {
-            this.colour = colour;
         }
         if (engineVolume > 0) {
             this.engineVolume = engineVolume;
@@ -88,22 +98,22 @@ public class Car extends Transport {
             }
         }
     }
+
    @Override
     public String toString() {
         return
-                "Марка машины " + BRAND + "\n"
-                        + "Модель " + MODEL + "\n"
-                        + "Страна производитель " + PROD_COUNTRY + "\n"
-                        + "Год выпуска " + PROD_YEAR + "\n"
+                "Марка машины " + brand + "\n"
+                        + "Модель " + model + "\n"
+                        + "Страна производитель " + prodCountry + "\n"
+                        + "Год выпуска " + prodYear + "\n"
                         + "Цвет " + colour + "\n"
                         + "Объем двигетеля " + engineVolume + "\n"
                         + "Коробка передач " + transmission + "\n"
-                        + "Тип кузова " + TYPE_BODY + "\n"
+                        + "Тип кузова " + typeBody + "\n"
                         + "Регистрационный номер " + registerNumber + "\n"
-                        + "Количество мест " + PLACE_COUNT + "\n"
+                        + "Количество мест " + placeCount + "\n"
                         + "Коробка передач " + transmission + "\n"
                         + "Скорость " + speed + "\n";
-
     }
 }
 

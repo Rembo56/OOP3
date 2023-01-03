@@ -1,11 +1,50 @@
 package Transport;
 public class Transport {
-    public String BRAND;
-    public String MODEL;
-    public static final String PROD_COUNTRY = "Russia";
-    public static final int PROD_YEAR = 2000;
+    public String brand;
+    public String model;
+    public String prodCountry;
+    public int prodYear;
     public int speed;
     public String colour;
+
+    public Transport(String brand, String model, String prodCountry, int prodYear, int speed, String colour) {
+        this.brand = brand;
+        this.model = model;
+        this.prodCountry = prodCountry;
+        this.prodYear = prodYear;
+        this.speed = speed;
+        this.colour = colour;
+
+        if (colour==null || colour.isEmpty()) {
+            this.colour = "White";
+        } else {
+            this.colour = colour;
+        }
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getProdCountry() {
+        return prodCountry;
+    }
+
+    public void setProdCountry(String prodCountry) {
+        this.prodCountry = prodCountry;
+    }
+
+    public int getProdYear() {
+        return prodYear;
+    }
+
+    public void setProdYear(int prodYear) {
+        this.prodYear = prodYear;
+    }
 
     public int getSpeed() {
         return speed;
@@ -20,26 +59,13 @@ public class Transport {
         this.colour = colour;
     }
 
-    public void setBRAND(String BRAND) {
-        this.BRAND = BRAND;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
-    public void setMODEL(String MODEL) {
-        this.MODEL = MODEL;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    public Transport(String BRAND, int speed) {
 
-        if (colour.isEmpty() || colour.equals(null)) {
-            this.colour = "White";
-        } else {
-            this.colour = colour;
-        }
-
-        if (speed >= 0) {
-            this.speed = speed;
-        } else {
-            this.speed = 60;
-        }
-    }
     }
