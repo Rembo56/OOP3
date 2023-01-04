@@ -18,13 +18,13 @@ public class Car extends Transport {
         }
     }
 
-    public float engineVolume;
-    public String transmission;
-    public String typeBody;
-    public int registerNumber;
-    public int placeCount;
-    public boolean typeTire;
-    public int mounth;
+    private float engineVolume;
+    private String transmission;
+    private String typeBody;
+    private int registerNumber;
+    private int placeCount;
+    private boolean typeTire;
+    private int mounth;
 
     public String getBrand() {
         return brand;

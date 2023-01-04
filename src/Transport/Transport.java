@@ -2,8 +2,8 @@ package Transport;
 public class Transport {
     public String brand;
     public String model;
-    public String prodCountry;
-    public int prodYear;
+    public final String prodCountry;
+    public final int prodYear;
     public int speed;
     public String colour;
 
@@ -34,16 +34,8 @@ public class Transport {
         return prodCountry;
     }
 
-    public void setProdCountry(String prodCountry) {
-        this.prodCountry = prodCountry;
-    }
-
     public int getProdYear() {
         return prodYear;
-    }
-
-    public void setProdYear(int prodYear) {
-        this.prodYear = prodYear;
     }
 
     public int getSpeed() {
