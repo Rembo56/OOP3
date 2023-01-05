@@ -1,11 +1,11 @@
 package Transport;
 public class Transport {
-    public String brand;
-    public String model;
-    public final String prodCountry;
-    public final int prodYear;
-    public int speed;
-    public String colour;
+    private String brand;
+    private String model;
+    private final String prodCountry;
+    private final int prodYear;
+    private int speed;
+    private String colour;
 
     public Transport(String brand, String model, String prodCountry, int prodYear, int speed, String colour) {
         this.brand = brand;

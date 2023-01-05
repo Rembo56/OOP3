@@ -26,22 +26,6 @@ public class Car extends Transport {
     private boolean typeTire;
     private int mounth;
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public String getProductionCountry() {
-        return prodCountry;
-    }
-
-    public int getProductionYear() {
-        return prodYear;
-    }
-
     public void printTires() {
         System.out.println(typeTire);}
 
@@ -68,8 +52,8 @@ public class Car extends Transport {
         } else {
             this.transmission = transmission;
         }
-        this.model=model;
-        this.brand=brand;
+        //this.model=model;
+       // this.brand=brand;
         if (registerNumber>0) {
             this.registerNumber = registerNumber;
         } else {
@@ -102,18 +86,18 @@ public class Car extends Transport {
    @Override
     public String toString() {
         return
-                "Марка машины " + brand + "\n"
-                        + "Модель " + model + "\n"
-                        + "Страна производитель " + prodCountry + "\n"
-                        + "Год выпуска " + prodYear + "\n"
-                        + "Цвет " + colour + "\n"
+                "Марка машины " + getBrand() + "\n"
+                        + "Модель " + getModel() + "\n"
+                        + "Страна производитель " + getProdCountry() + "\n"
+                        + "Год выпуска " + getProdYear() + "\n"
+                        + "Цвет " + getColour() + "\n"
                         + "Объем двигетеля " + engineVolume + "\n"
                         + "Коробка передач " + transmission + "\n"
                         + "Тип кузова " + typeBody + "\n"
                         + "Регистрационный номер " + registerNumber + "\n"
                         + "Количество мест " + placeCount + "\n"
                         + "Коробка передач " + transmission + "\n"
-                        + "Скорость " + speed + "\n";
+                        + "Скорость " + getSpeed() + "\n";
     }
 }
 
